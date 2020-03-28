@@ -1,0 +1,47 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+nav{
+  background-color: #dad4d5;
+}
+nav .brand-logo{
+  color:#bd1c1c;
+}
+
+nav ul a {
+  color:#bd1c1c;
+}
+
+.page-footer{
+  background: #ee6e73;
+}
+
+.activeCls{
+  background-color:rgba(0, 0, 0, 0.1);
+}
+
+.bar__cls{
+  width:800px;
+  height:auto;
+  margin:0px auto;
+}
+
+#index-banner{
+  min-height:800px;
+}
+
+
+
+

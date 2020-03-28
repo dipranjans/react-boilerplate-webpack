@@ -1,5 +1,2 @@
-<h1>React boilerplate</h1>
-
-<h2>Clone the repo, npm i, then, npm start</h2>
-
-<h3>In this repo, both babel, webapack4 used, easy set up with gitignore file also. all the best</h3>
+<h1>Covid19 alert for all people in the world and india.</h1>
+<p>In this project we will the live cases of covid 19 as per the api data given by covid19india.org</p>
