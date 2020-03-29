@@ -6,51 +6,66 @@ const COVID19DATA_URL = "https://api.covid19india.org/data.json";
 
 class Home extends Component {
   state = {
-    statewise: []
+    statewise: [],
+    loader: true
   };
 
   componentDidMount() {
+    // this.setState({
+    //   ...this.state,
+    //   loader: true
+    // });
     axios.get(COVID19DATA_URL).then(res => {
-      this.setState({ ...this.state, statewise: res.data.statewise });
+      if (res.data.statewise === "" || res.data.statewise === "undefined") {
+        this.setState({
+          ...this.state,
+          loader: true
+        });
+      } else {
+        this.setState({
+          ...this.state,
+          loader: false,
+          statewise: res.data.statewise
+        });
 
-      const statepush = [];
-      const activepush = [];
-      res.data.statewise.map((val, idx) => {
-        if (idx > 0 && val.active > 0) {
-          statepush.push(val.state);
-          activepush.push(val.active);
-        }
-      });
-
-      this.setState({
-        ...this.state,
-        labels: statepush,
-        datasets: [
-          {
-            type: "bar",
-            label: "Covid19 Cases India",
-            data: [...activepush],
-            fill: false,
-            backgroundColor: "#e85577",
-            borderColor: "#71B37C",
-            hoverBackgroundColor: "#71B37C",
-            hoverBorderColor: "#71B37C"
+        const statepush = [];
+        const activepush = [];
+        res.data.statewise.map((val, idx) => {
+          if (idx > 0 && val.active > 0) {
+            statepush.push(val.state);
+            activepush.push(val.active);
           }
-        ],
-        datasetpie: [
-          {
-            type: "pie",
-            label: "Covid19 Cases India",
-            data: [...activepush],
-            fill: false,
-            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-            borderColor: "#71B37C",
-            hoverBackgroundColor: "#71B37C",
-            hoverBorderColor: "#000"
-          }
-        ]
-      });
+        });
 
+        this.setState({
+          ...this.state,
+          labels: statepush,
+          datasets: [
+            {
+              type: "bar",
+              label: "Covid19 Cases India",
+              data: [...activepush],
+              fill: false,
+              backgroundColor: "#e85577",
+              borderColor: "#71B37C",
+              hoverBackgroundColor: "#71B37C",
+              hoverBorderColor: "#71B37C"
+            }
+          ],
+          datasetpie: [
+            {
+              type: "pie",
+              label: "Covid19 Cases India",
+              data: [...activepush],
+              fill: false,
+              backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+              borderColor: "#71B37C",
+              hoverBackgroundColor: "#71B37C",
+              hoverBorderColor: "#000"
+            }
+          ]
+        });
+      }
       //console.log(this.state);
     });
   }
@@ -92,6 +107,13 @@ class Home extends Component {
             })()}
             )
           </h4>
+
+          {this.state.loader && (
+            <div className="progress">
+              <div className="indeterminate"></div>
+            </div>
+          )}
+
           <div className="row center">
             <table className="responsive-table highlight">
               <thead>

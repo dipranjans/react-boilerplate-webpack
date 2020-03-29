@@ -21,6 +21,7 @@ class App extends Component {
               <NavLink to="/" className="brand-logo">
                 Covid19 alert
               </NavLink>
+
               <ul className="right hide-on-med-and-down">
                 <li>
                   <NavLink to="/" exact activeClassName="activeCls">
@@ -119,50 +120,91 @@ class App extends Component {
               </div>
               <div className="col l3 s12">
                 <h5 className="white-text">Symptoms</h5>
-                <ul>
+                <ul className="symptoms__cls">
                   <li>
-                    <a className="white-text" href="#!">
-                      Link 1
+                    <a
+                      className="white-text"
+                      href="https://www.who.int/"
+                      target="_blank"
+                    >
+                      Cough
                     </a>
                   </li>
                   <li>
-                    <a className="white-text" href="#!">
-                      Link 2
+                    <a
+                      className="white-text"
+                      href="https://www.who.int/"
+                      target="_blank"
+                    >
+                      fever
                     </a>
                   </li>
                   <li>
-                    <a className="white-text" href="#!">
-                      Link 3
+                    <a
+                      className="white-text"
+                      href="https://www.who.int/"
+                      target="_blank"
+                    >
+                      tiredness
                     </a>
                   </li>
                   <li>
-                    <a className="white-text" href="#!">
-                      Link 4
+                    <a
+                      className="white-text"
+                      href="https://www.who.int/"
+                      target="_blank"
+                    >
+                      difficulty breathing (severe cases)
                     </a>
                   </li>
                 </ul>
               </div>
               <div className="col l3 s12">
                 <h5 className="white-text">Prevention</h5>
-                <ul>
+                <ul className="prevention__cls">
                   <li>
-                    <a className="white-text" href="#!">
-                      Link 1
+                    <a
+                      className="white-text"
+                      href="https://www.mohfw.gov.in/"
+                      target="_blank"
+                    >
+                      HANDS Wash them often
                     </a>
                   </li>
                   <li>
-                    <a className="white-text" href="#!">
-                      Link 2
+                    <a
+                      className="white-text"
+                      href="https://www.mohfw.gov.in/"
+                      target="_blank"
+                    >
+                      ELBOW Cough into it
                     </a>
                   </li>
                   <li>
-                    <a className="white-text" href="#!">
-                      Link 3
+                    <a
+                      className="white-text"
+                      href="https://www.mohfw.gov.in/"
+                      target="_blank"
+                    >
+                      FACE Don't touch it
                     </a>
                   </li>
                   <li>
-                    <a className="white-text" href="#!">
-                      Link 4
+                    <a
+                      className="white-text"
+                      href="https://www.mohfw.gov.in/"
+                      target="_blank"
+                    >
+                      SPACE Keep safe distance
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="white-text"
+                      href="https://www.mohfw.gov.in/"
+                      target="_blank"
+                    >
+                      HOME Stay
                     </a>
                   </li>
                 </ul>

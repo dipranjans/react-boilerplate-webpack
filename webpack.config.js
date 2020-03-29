@@ -31,10 +31,5 @@ module.exports = {
     historyApiFallback: true,
     compress: true,
     port: 9000
-  },
-  externals: {
-    //config: JSON.stringify({
-    //apiUrl: "http://localhost:4000"
-    //})
   }
 };
